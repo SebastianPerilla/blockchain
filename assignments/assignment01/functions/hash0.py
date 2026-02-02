@@ -11,7 +11,6 @@ def usage():
     print("Usage: python hash0.py <input>")
     print("Produces a 32-bit digest of <input>. The output is in hex.")
     print()
-    print(xor32_hash('Jose'))
     print("Example:")
     print("$ python hash0.py bitcoin")
     print("631a000d")
