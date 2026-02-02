@@ -19,7 +19,6 @@ std::string xor32Hash(std::string str) {
 } // Making this the 32 bit output
 
 int main() {
-
-    std::cout << xor32Hash("Jose") << "\n";
+    std::cout << xor32Hash("Sebastian") << "\n";
     return 0;
 }
