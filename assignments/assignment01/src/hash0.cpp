@@ -2,6 +2,11 @@
 #include <sstream>
 #include <string>
 
+// std::string minLen(std::string value){
+//     return std::format
+//
+// }
+
 std::string xor32Hash(std::string str) {
     int32_t hash { 0 };
 
