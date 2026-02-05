@@ -1,18 +1,18 @@
 # library
-add_library(hashing 
+add_library(hashingLib
     sha256.cpp
 )
-target_include_directories(hashing 
+target_include_directories(hashingLib
     PUBLIC 
         ${CMAKE_SOURCE_DIR}/include
 )
 
 # executable
-add_executable(hashing
+add_executable(hashingHomework
     main.cpp
 )
 
-target_link_libraries(main 
+target_link_libraries(hashingHomework 
     PRIVATE
-                hashing
+        hashingLib
 )
