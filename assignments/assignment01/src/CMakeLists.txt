@@ -1,6 +1,7 @@
 # library
 add_library(hashingLib
-    sha256.cpp
+    # sha256.cpp
+    hash0.cpp
 )
 target_include_directories(hashingLib
     PUBLIC 
