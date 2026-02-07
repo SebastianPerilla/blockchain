@@ -12,11 +12,6 @@
 */
 
 /*
-
-    Approach: Since we are brute forcing this, we could try to increase the char values within the string the string
-until we find a valid match to the hash.
-
-    If we think about this logically, it goes like this:
     1. The String "Sebastian" is provided
     2. Then we take that string, and shift each character by a certain amount in this case:
         shift  = (i % 4) * 8
@@ -25,36 +20,36 @@ until we find a valid match to the hash.
        we can then add them in, for example: (i.e., the string "Sebastian" results in the hash: b114e,
        which is 5 characters but there should be a total of 000 more zero's at the end to make it be a 32-bit result)
 
-    If we want to brute force this, we can just do all of these steps in reverse and loop until we find a valid hash:
 
-    1. Start with an empty set of hexadecimal values at 0000 0000 (32 bits)
-    2. Increment the rightmost char by 1, to 0000 0001, then we can try converting
-       this from a hex value to a char
-    3. Then we want to reverse the hashing algorithm of "doing an XOR and shifting the character value back"
-    4.
-
-    However we can also just calculate by hand the results and show them hash correctly, for example we can look at the
+    We can just calculate by hand the results and show them hash correctly, for example we can look at the
 hash for "Sebastian" which would result in the following:
-        Sebastian
-        cqotc`dtN
+
+        Sebastian = 0x 000b 114e
+        cqotc`dtN = 0x 000b 114e
+
+    This is because the shifts occur in a "wrapping" manner where they loop between shifting
+    the bits by 0,8,16, and 24 before going back to looping ot 0. We can just see for example
+    that by making the bits cancel out when they hit the appropriate shift length to equal the
+    same hash as the original. For example:
+    We know that the letters (in order), in Sebastian given this is 32 bits, both the first 'a' and
+    second 'a' will xor eachother and cause the first byte to equal 0. As such as can put whatever ascii characters
+    there and it will result in that byte equaling the desired result.
+
                                              N
                t         d         `         c
                t         o         q         c
     Bits = 0000 0000 0000 1011 0001 0001 0100 1110
-                     0110 1111
-                     0110 1111 o 0111 0001 q    0110 0011 c
-                     0110 0100 d    0110 1110 `            0000 0000 c 0100 1110 N
 
-    All we gotta do is add up these numbers, and then find another string of the same length that outputs the same total
-result and it should hash to the same value: in this case this equals 494, if we then choose another set of letters such
-as Sea`t S : 01010011 = 83 e : 01100101 = 101 a : 01100001 = 97 a : 01100001 = 97 t : 01110100 = 116
+    This is a collision *boom*
 */
 
+#include "hash0.h"
 #include <iostream>
 
 // No Brute Forcing here, just two strings that hash to the same value
 int main() {
     std::cout << "Exercise 1: xor32Hash Solution" << "\n";
-
+    std::cout << "Hash for Sebastian: " << hash0::xor32Hash("Sebastian") << "\n";
+    std::cout << "Hash for cqotc`dtN: " << hash0::xor32Hash("cqotc`dtN") << "\n";
     return 0;
 }

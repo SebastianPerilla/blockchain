@@ -10,10 +10,10 @@ target_include_directories(hashingLib
 
 # executable
 add_executable(hashingHomework
-    main.cpp
+    ex01.cpp
 )
 
-target_link_libraries(hashingHomework 
+target_link_libraries(hashingHomework
     PRIVATE
         hashingLib
 )
