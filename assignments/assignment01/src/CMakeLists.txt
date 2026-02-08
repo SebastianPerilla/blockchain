@@ -1,7 +1,7 @@
 # library
 add_library(hashingLib
-    # sha256.cpp
     hash0.cpp
+    hash1.cpp
 )
 target_include_directories(hashingLib
     PUBLIC 
@@ -10,8 +10,8 @@ target_include_directories(hashingLib
 
 # executable
 add_executable(hashingHomework
-    ex02.cpp
-    # ex01.cpp
+    ex03.cpp
+    # main.cpp
 )
 
 target_link_libraries(hashingHomework
