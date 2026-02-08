@@ -1,6 +1,7 @@
 #include "hash1.h"
 #include <cstdint>
 #include <iostream>
+#include <random>
 #include <sstream>
 #include <string>
 #include <unordered_map>
@@ -22,10 +23,21 @@ values that could result in a collision
 so if we have an empty 32 bits to fill up it means that we could try to come from two ends, one from the leftmost
 significant bit, and another on the rightmost and increment them little by little, until they for sure will meet in the
 middle and will eventually meet at the same hash. However, assuming that we want to take advantage of the birthday
-paradox we could try to generate a bunch of "random" initial values and tweak them? That doesnt mean there are more
-pairs tho....... we could try increasing the bits from left to right as they are exponential then it means we can just
-shift those very easily
+paradox we could try to generate a bunch of "random" initial values and tweak them? We could for example given they must
+share some information, store the hashes of the attempted random values and then find the hashes by checking if they can
+be inserted into the list of key value pairs (hash map), and if it cannot be inserted, and if it is not from the same
+random value, then it MUST be a collision.
 */
+
+// Lets make a random generator
+namespace rando {
+    std::mt19937 gen { std::random_device {}() };
+
+    uint32_t randomU32() {
+        static std::uniform_int_distribution<uint32_t> dist(0, std::numeric_limits<uint32_t>::max());
+        return dist(gen);
+    }
+} // namespace rando
 
 bool check(std::string str1, std::string str2) { return hash1::simpleHash(str1) == hash1::simpleHash(str2); }
 
@@ -38,24 +50,24 @@ std::string numToHex(uint32_t num) {
 
 int main() {
     std::cout << "Exercise 3: Brute Force Two strings to the same hash\n";
-    std::cout << hash1::simpleHash("Ibhangry");
-    // 4,294,967,295
 
-    uint32_t string1 = UINT32_MAX; // start at max
-    uint32_t string2 = 0;          // start at 0
+    std::unordered_map<std::string, uint32_t> reverse;
 
     while (true) {
-        std::string hex1Str = numToHex(string1);
-        std::string hex2Str = numToHex(string2);
+        uint32_t randNum { rando::randomU32() };
+        std::string hex { hash1::simpleHash(numToHex(randNum)) };
 
-        if (check(hex1Str, hex2Str) && hex1Str != hex2Str) {
-            std::cout << "Collision found!\n";
-            std::cout << hex1Str << "\n" << hex2Str << "\n";
+        auto [it, inserted] = reverse.emplace(hex, randNum);
+
+        if (!inserted && it->second != randNum) {
+            std::cout << "Keys 0x" << numToHex(it->second) << " and 0x" << numToHex(randNum) << "\n= " << hex << "\n";
             break;
         }
-
-        --string1;
-        ++string2;
     }
+
+    // std::cout << "Trying values\n";
+    // std::cout << hash1::simpleHash("1107329c") << "\n";
+    // std::cout << hash1::simpleHash("f878baec") << "\n";
+
     return 0;
 }

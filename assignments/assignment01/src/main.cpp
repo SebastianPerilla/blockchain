@@ -14,6 +14,8 @@ int main() {
     std::cout << "Hash: " << hash0::xor32Hash("14'+``p0") << "\n";
 
     // Exercise 3: Brute Force
+    std::cout << "Exercise 3: Brute Force two strings that share the same hash\n";
+    std::cout << "Some of the strings found: \n" << 0xcb0fbecd << 0xfdc1e00 << "\n";
 
     return 0;
 }
