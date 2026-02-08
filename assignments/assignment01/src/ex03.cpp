@@ -64,7 +64,7 @@ int main() {
             break;
         }
     }
-
+    std::cout << "Sampled: " << reverse.size() << " numbers in total.\n";
     // std::cout << "Trying values\n";
     // std::cout << hash1::simpleHash("1107329c") << "\n";
     // std::cout << hash1::simpleHash("f878baec") << "\n";
