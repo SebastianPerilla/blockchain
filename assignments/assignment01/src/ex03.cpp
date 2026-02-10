@@ -29,7 +29,6 @@ be inserted into the list of key value pairs (hash map), and if it cannot be ins
 random value, then it MUST be a collision.
 */
 
-// Lets make a random generator
 namespace rando {
     std::mt19937 gen { std::random_device {}() };
 
@@ -65,9 +64,6 @@ int main() {
         }
     }
     std::cout << "Sampled: " << reverse.size() << " numbers in total.\n";
-    // std::cout << "Trying values\n";
-    // std::cout << hash1::simpleHash("1107329c") << "\n";
-    // std::cout << hash1::simpleHash("f878baec") << "\n";
 
     return 0;
 }
