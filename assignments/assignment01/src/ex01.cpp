@@ -43,13 +43,22 @@ hash for "Sebastian" which would result in the following:
     This is a collision *boom*
 */
 
+#include "ex01.h"
 #include "hash0.h"
+#include <fstream>
 #include <iostream>
 
-// No Brute Forcing here, just two strings that hash to the same value
-int main() {
-    std::cout << "Exercise 1: xor32Hash Solution" << "\n";
-    std::cout << "Hash for Sebastian: " << hash0::xor32Hash("Sebastian") << "\n";
-    std::cout << "Hash for cqotc`dtN: " << hash0::xor32Hash("cqotc`dtN") << "\n";
-    return 0;
-}
+namespace ex01 {
+    // No Brute Forcing here, just two strings that hash to the same value
+    int ex01() {
+        std::ofstream ex1File("./submissions/exercise01.txt");
+
+        ex1File << "Sebastian, cqotc`dtN";
+        ex1File.close();
+
+        std::cout << "Exercise 1: xor32Hash Solution" << "\n";
+        std::cout << "Hash for Sebastian: " << hash0::xor32Hash("Sebastian") << "\n";
+        std::cout << "Hash for cqotc`dtN: " << hash0::xor32Hash("cqotc`dtN") << "\n";
+        return 0;
+    }
+} // namespace ex01

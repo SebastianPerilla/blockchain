@@ -1,7 +1,10 @@
+#include "ex03.h"
 #include "hash1.h"
+#include "randomGen.h"
+
 #include <cstdint>
+#include <fstream>
 #include <iostream>
-#include <random>
 #include <sstream>
 #include <string>
 #include <unordered_map>
@@ -29,43 +32,40 @@ be inserted into the list of key value pairs (hash map), and if it cannot be ins
 random value, then it MUST be a collision.
 */
 
-namespace rando {
-    std::mt19937 gen { std::random_device {}() };
-
-    uint32_t randomU32() {
-        static std::uniform_int_distribution<uint32_t> dist(0, std::numeric_limits<uint32_t>::max());
-        return dist(gen);
+namespace ex03 {
+    bool check(const std::string str1, const std::string str2) {
+        return hash1::simpleHash(str1) == hash1::simpleHash(str2);
     }
-} // namespace rando
 
-bool check(const std::string str1, const std::string str2) {
-    return hash1::simpleHash(str1) == hash1::simpleHash(str2);
-}
+    std::string numToHex(const uint32_t num) {
+        std::stringstream stream;
+        stream << std::hex << num;
+        std::string hexResult { stream.str() };
+        return hexResult;
+    }
 
-std::string numToHex(const uint32_t num) {
-    std::stringstream stream;
-    stream << std::hex << num;
-    std::string hexResult { stream.str() };
-    return hexResult;
-}
+    int ex03() {
+        std::ofstream ex3File("./submissions/exercise03.txt");
 
-int main() {
-    std::cout << "Exercise 3: Brute Force Two strings to the same hash\n";
+        std::cout << "Exercise 3: Brute Force Two strings to the same hash\n";
 
-    std::unordered_map<std::string, uint32_t> reverse;
+        std::unordered_map<std::string, uint32_t> reverse;
 
-    while (true) {
-        uint32_t randNum { rando::randomU32() };
-        std::string hex { hash1::simpleHash(numToHex(randNum)) };
+        while (true) {
+            uint32_t randNum { rando::randomU32() };
+            std::string hex { hash1::simpleHash(numToHex(randNum)) };
 
-        auto [it, inserted] = reverse.emplace(hex, randNum);
+            auto [it, inserted] = reverse.emplace(hex, randNum);
 
-        if (!inserted && it->second != randNum) {
-            std::cout << "Keys 0x" << numToHex(it->second) << " and 0x" << numToHex(randNum) << "\n= " << hex << "\n";
-            break;
+            if (!inserted && it->second != randNum) {
+                std::cout << "Keys 0x" << numToHex(it->second) << " and 0x" << numToHex(randNum) << "\n= " << hex
+                          << "\n";
+                ex3File << numToHex(it->second) << ", " << numToHex(randNum);
+                break;
+            }
         }
-    }
-    std::cout << "Sampled: " << reverse.size() << " numbers in total.\n";
+        std::cout << "Sampled: " << reverse.size() << " numbers in total.\n";
 
-    return 0;
-}
+        return 0;
+    }
+} // namespace ex03

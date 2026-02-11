@@ -1,7 +1,10 @@
+#include "ex04.h"
+#include "randomGen.h"
 #include "sha256.h"
+
+#include <fstream>
 #include <iostream>
 #include <iterator>
-#include <random>
 #include <sstream>
 #include <unordered_map>
 #include <vector>
@@ -21,46 +24,49 @@
  *
  */
 
-// Random Function
-namespace rando {
-    std::mt19937 gen { std::random_device {}() };
-
-    uint32_t randomU32() {
-        static std::uniform_int_distribution<uint32_t> dist(0, std::numeric_limits<uint32_t>::max());
-        return dist(gen);
+namespace ex04 {
+    std::string numToHex(const uint32_t num) {
+        std::stringstream stream;
+        stream << std::hex << num;
+        std::string hexResult { stream.str() };
+        return hexResult;
     }
-} // namespace rando
 
-std::string numToHex(const uint32_t num) {
-    std::stringstream stream;
-    stream << std::hex << num;
-    std::string hexResult { stream.str() };
-    return hexResult;
-}
+    int ex04() {
+        std::ofstream ex4File("./submissions/exercise04.txt");
 
-int main() {
-    std::cout << "Exercise 4: SHA256 Hashes\n";
+        std::cout << "Exercise 4: SHA256 Hashes\n";
 
-    std::vector<std::string> startStrings { "cafe", "faded", "decade" };
+        std::vector<std::string> startStrings { "decade", "faded", "cafe" };
+        int appendCommas { 0 };
+        int count { 0 };
+        while (true) {
+            uint32_t randNum { rando::randomU32() };
+            std::string hex { sha::sha256Hex("bitcoin" + numToHex(randNum)) };
 
-    int count { 0 };
-    while (true) {
-        uint32_t randNum { rando::randomU32() };
-        std::string hex { sha::sha256Hex("bitcoin" + numToHex(randNum)) };
+            if (std::empty(startStrings)) {
+                break;
+            }
 
-        if (std::empty(startStrings)) {
-            break;
+            if (hex.starts_with(startStrings.back())) {
+                if (appendCommas < 2) {
+                    ex4File << "bitcoin" + numToHex(randNum) << ", ";
+                    ++appendCommas;
+                } else if (appendCommas == 2) {
+                    ex4File << "bitcoin" + numToHex(randNum);
+                }
+
+                std::cout << "Hex: " << hex << " maps to: " << "bitcoin" + numToHex(randNum) << "\n";
+                startStrings.pop_back();
+            }
+            ++count;
         }
+        std::cout << "Sampled: " << count << " numbers in total.\n";
+        // std::cout << "bitcoin970578a3 maps to: " << sha::sha256Hex("bitcoin970578a3") << "\n";
+        // std::cout << "bitcoin103cd13f maps to: " << sha::sha256Hex("bitcoin103cd13f") << "\n";
+        // std::cout << "bitcoin802d07b0 maps to: " << sha::sha256Hex("bitcoin802d07b0") << "\n";
 
-        if (hex.starts_with(startStrings.back())) {
-            std::cout << "Hex: " << hex << " maps to: " << "bitcoin" + numToHex(randNum) << "\n";
-            startStrings.pop_back();
-        }
-        ++count;
+        ex4File.close();
+        return 0;
     }
-    std::cout << "Sampled: " << count << " numbers in total.\n";
-    std::cout << "bitcoin970578a3 maps to: " << sha::sha256Hex("bitcoin970578a3") << "\n";
-    std::cout << "bitcoin970578a3 maps to: " << sha::sha256Hex("bitcoin103cd13f") << "\n";
-    std::cout << "bitcoin970578a3 maps to: " << sha::sha256Hex("bitcoin802d07b0") << "\n";
-    //
-}
+} // namespace ex04

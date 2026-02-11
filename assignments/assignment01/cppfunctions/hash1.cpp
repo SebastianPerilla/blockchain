@@ -1,3 +1,4 @@
+#include "hash1.h"
 #include <iostream>
 #include <sstream>
 #include <string>
