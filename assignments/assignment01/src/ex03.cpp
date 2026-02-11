@@ -38,9 +38,11 @@ namespace rando {
     }
 } // namespace rando
 
-bool check(std::string str1, std::string str2) { return hash1::simpleHash(str1) == hash1::simpleHash(str2); }
+bool check(const std::string str1, const std::string str2) {
+    return hash1::simpleHash(str1) == hash1::simpleHash(str2);
+}
 
-std::string numToHex(uint32_t num) {
+std::string numToHex(const uint32_t num) {
     std::stringstream stream;
     stream << std::hex << num;
     std::string hexResult { stream.str() };

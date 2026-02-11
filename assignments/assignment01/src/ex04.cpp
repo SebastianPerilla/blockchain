@@ -1,8 +1,10 @@
 #include "sha256.h"
 #include <iostream>
+#include <iterator>
 #include <random>
 #include <sstream>
 #include <unordered_map>
+#include <vector>
 
 /*
  * For this exercise compute three partial collisions using SHA256. Find three ASCII strings
@@ -29,9 +31,7 @@ namespace rando {
     }
 } // namespace rando
 
-bool check(std::string str1, std::string str2) { return sha::sha256Hex(str1) == sha::sha256Hex(str2); }
-
-std::string numToHex(uint32_t num) {
+std::string numToHex(const uint32_t num) {
     std::stringstream stream;
     stream << std::hex << num;
     std::string hexResult { stream.str() };
@@ -39,30 +39,28 @@ std::string numToHex(uint32_t num) {
 }
 
 int main() {
-    std::cout << "Exercise 3: Brute Force Two strings to the same hash\n";
+    std::cout << "Exercise 4: SHA256 Hashes\n";
 
-    std::unordered_map<std::string, uint32_t> reverse;
-    int count { 10 };
+    std::vector<std::string> startStrings { "cafe", "faded", "decade" };
+
+    int count { 0 };
     while (true) {
         uint32_t randNum { rando::randomU32() };
-        std::string hex { sha::sha256Hex(numToHex(randNum)) };
+        std::string hex { sha::sha256Hex("bitcoin" + numToHex(randNum)) };
 
-        std::cout << hex << "\n";
-
-        if (count < 0) {
+        if (std::empty(startStrings)) {
             break;
         }
 
-        --count;
-
-        // auto [it, inserted] = reverse.emplace(hex, randNum);
-        //
-        // if (!inserted && it->second != randNum) {
-        //     std::cout << "Keys 0x" << numToHex(it->second) << " and 0x" << numToHex(randNum) << "\n= " << hex <<
-        //     "\n"; break;
-        // }
+        if (hex.starts_with(startStrings.back())) {
+            std::cout << "Hex: " << hex << " maps to: " << "bitcoin" + numToHex(randNum) << "\n";
+            startStrings.pop_back();
+        }
+        ++count;
     }
-    std::cout << "Sampled: " << reverse.size() << " numbers in total.\n";
-
-    return 0;
+    std::cout << "Sampled: " << count << " numbers in total.\n";
+    std::cout << "bitcoin970578a3 maps to: " << sha::sha256Hex("bitcoin970578a3") << "\n";
+    std::cout << "bitcoin970578a3 maps to: " << sha::sha256Hex("bitcoin103cd13f") << "\n";
+    std::cout << "bitcoin970578a3 maps to: " << sha::sha256Hex("bitcoin802d07b0") << "\n";
+    //
 }
