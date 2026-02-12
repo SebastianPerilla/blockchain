@@ -14,7 +14,7 @@ conda activate assignment01SPE
 
 ### Run the Project
 
-- To run the assignment, run the following command (Linux/macOS):
+- To run the assignment, run the following command from the assignment root: `assignment01` (Linux/macOS):
 
 ```bash
 
