@@ -1,5 +1,6 @@
 # Assignment 01: Blockchain
-- C++(GCC 23) Solutions for Assignment 01 in the BlockChain class
+- C++(GCC 23) Solutions for Assignment 01 in the Blockchain class
+- Github Repository: [Link](https://github.com/SebastianPerilla/blockchain/tree/main/assignments/assignment01)
 
 ### Install Dependencies
 
