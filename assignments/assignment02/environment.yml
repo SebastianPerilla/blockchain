@@ -1,0 +1,8 @@
+name: assignment01SPE
+channels:
+  - conda-forge
+dependencies:
+  - cmake
+  - make
+  - cxx-compiler
+  - openssl
