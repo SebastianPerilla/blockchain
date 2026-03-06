@@ -1,5 +1,7 @@
 # Assignment 02: Blockchain
-- Python Solutinos for Assignment 02 in the Blockchain Class 
+- Python Solutions for Assignment 02 in the Blockchain Class 
+- Github Repo: [Link](https://github.com/SebastianPerilla/blockchain/tree/main/assignments/assignment02)
+
 
 ### Install Dependencies
 
