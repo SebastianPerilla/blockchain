@@ -1,0 +1,41 @@
+{
+  "mnemonic": "desert actual obtain caught nest remind jungle tray wish device only fan",
+  "derivation_path_template": "m/44'/1'/0'/0/i",
+  "addresses": [
+    {
+      "index": 0,
+      "path": "m/44'/1'/0'/0/0",
+      "address": "myAKG9m2WUb7hVmNG9tLSXke6WRx2bFmPz",
+      "public_key": "0285e6db581d1418ae63ec2f470963fdcebf875930166b677654a41cf92945041d",
+      "private_key_hex": "d23d66254185a30b1dedb28b5224e959b3b5b45edefafa0b173ed221d7b3cc17"
+    },
+    {
+      "index": 1,
+      "path": "m/44'/1'/0'/0/1",
+      "address": "n4r1PSZEdk2cJHAJZdyfqGHPnwQ3rmqyLF",
+      "public_key": "0203d27a48f23fe248f95f41ab82ddda8661f8ec53e15f76ad10d9cae25cc5d485",
+      "private_key_hex": "0dab928f7a97eaae369876de102cd08b1a17472664919c7e1f0dc30237741a1a"
+    },
+    {
+      "index": 2,
+      "path": "m/44'/1'/0'/0/2",
+      "address": "mxV3mmrGjMysrE8MBYVZgvVp2k4HSsFvdK",
+      "public_key": "0269eabc43f6a324cccbe254b2360ddaf4ba98601533cf63b1d5233f9f7c66462d",
+      "private_key_hex": "fb87d6784939fe82d445b1a138b19fee46892f36d55bcc356d424f22ce0970bf"
+    },
+    {
+      "index": 3,
+      "path": "m/44'/1'/0'/0/3",
+      "address": "mvXNie6Z5ba4AxGYgXK6jG16b9sfDfZNHs",
+      "public_key": "026390cd6fbbdcdd3bad9e5136c3f2066bfbb932030d3e1a91c04cb8749987d6b9",
+      "private_key_hex": "f416a64b5f79933fb4dedb35bedd0a018b163a33be98131435e7a316a0748183"
+    },
+    {
+      "index": 4,
+      "path": "m/44'/1'/0'/0/4",
+      "address": "mrxnivjiFYyJtSybhTN6YTk5atHXa5uXCv",
+      "public_key": "03d3a3a7575f57e115016b8efd4c27ddd5bacf186e4613457fb125bb3ea09512a3",
+      "private_key_hex": "f78ae7a0f6d2fc3e43f1559b35c6147d51aaf625aa57bf1a0d33d57c500b7d73"
+    }
+  ]
+}

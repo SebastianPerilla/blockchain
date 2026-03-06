@@ -1,26 +1,14 @@
-# Assignment 01: Blockchain
-- C++(GCC 23) Solutions for Assignment 01 in the BlockChain class
+# Assignment 02: Blockchain
+- Python Solutinos for Assignment 02 in the Blockchain Class 
 
 ### Install Dependencies
 
 - First, install dependencies (using conda):
 
 ```bash
-conda env create -f environment.yml
+python3 -m .venv venv
+source .venv/bin/activate
 
-conda activate assignment01SPE
-
+pip install -r requirements
 ```
-
-### Run the Project
-
-- To run the assignment, run the following command from the assignment root `assignment01`:
-
-On Linux/macOS:
-```bash
-
-submissions/runsolutions.sh
-
-```
-
 

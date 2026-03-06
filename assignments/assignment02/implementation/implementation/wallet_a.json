@@ -1,0 +1,41 @@
+{
+  "mnemonic": "into pluck vessel decade mandate slogan lunch wire shaft legend edge impose",
+  "derivation_path_template": "m/44'/1'/0'/0/i",
+  "addresses": [
+    {
+      "index": 0,
+      "path": "m/44'/1'/0'/0/0",
+      "address": "mxB1NPoTTrLuAkVSMkBcysujbXcm2XTfSD",
+      "public_key": "03d872bf9fb8b2fa29eb87027abba2ef4f61477dfcd574878df4e392d5b785cbed",
+      "private_key_hex": "6c33b02d98b31e749fdec6235713142a9270fb3f5dc9eabdf9da76d759a826d5"
+    },
+    {
+      "index": 1,
+      "path": "m/44'/1'/0'/0/1",
+      "address": "mujj3eVUWnovryXmKSnFiatnHcNh8daCCK",
+      "public_key": "02b87d2eea1697ea1afea54e6c53d3d14df2565ac42589e4f20728097f63e0507a",
+      "private_key_hex": "fa01bb4b0447c25764d2d3df5369a4c15b0fd25dded604cce63c21e98c4f33d4"
+    },
+    {
+      "index": 2,
+      "path": "m/44'/1'/0'/0/2",
+      "address": "mfxJqsomkCbY2jLdDWQ1m1LtgNJ9qtMd57",
+      "public_key": "030e746778e8f9a136cf76abbd00334468186af83ef264ae690520ea3e9e8e7712",
+      "private_key_hex": "c796576336010d080c3e65245ce104d881043ce8007dd01b413b0c31a3d6cc98"
+    },
+    {
+      "index": 3,
+      "path": "m/44'/1'/0'/0/3",
+      "address": "n1L64Tk5itL4dpyETpHdGFf26ZeWWs26eV",
+      "public_key": "02e930da635178f871a942e017439aa01e5b3aea5d26f6f2d9a4c8d1daf04f47cd",
+      "private_key_hex": "3eb676fd8f999d4c2cb31500918002c33ca6005c43b119184593f36c233f1681"
+    },
+    {
+      "index": 4,
+      "path": "m/44'/1'/0'/0/4",
+      "address": "n3FVkYixpLRQXUvKtHjo9Tfwn333NDtXQt",
+      "public_key": "0358d28ca9ceebca11eff14df93e8f94b3bc600f867a45c3f217d475f63e64a44e",
+      "private_key_hex": "3bc7e3587782614fa8c2c1a64ce04258d57ccf23e0c4ca4190dbd973eda5a0be"
+    }
+  ]
+}
