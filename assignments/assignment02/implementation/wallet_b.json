@@ -1,0 +1,41 @@
+{
+  "mnemonic": "enable estate good fit person deputy barely quarter pill dial rescue lunch",
+  "derivation_path_template": "m/44'/1'/0'/0/i",
+  "addresses": [
+    {
+      "index": 0,
+      "path": "m/44'/1'/0'/0/0",
+      "address": "mo78WUSnBny9Txd9XmdyZQXQmeVRc44GW5",
+      "public_key": "03845f793f56ec3bcea09f899125332f4b577b9cb9fd5c2a9ce83cc6f6664e1bd0",
+      "private_key_hex": "1666b2a1fd9bde18d852cc4ead42fe2a2c7dab14de9456157f91b9be3b17e6ee"
+    },
+    {
+      "index": 1,
+      "path": "m/44'/1'/0'/0/1",
+      "address": "mpr53eFCHDZyWAUX1rMim7Zg3rC72o6rDV",
+      "public_key": "03bf283d7d2019a4feb92181f928b08363be209909652bd1884bf072e58f3648c1",
+      "private_key_hex": "21bc55ae7675967a6d3ed418b920696b168e82de094f375ea9e876409597eedb"
+    },
+    {
+      "index": 2,
+      "path": "m/44'/1'/0'/0/2",
+      "address": "mjKewxLUwakA9J58BqkqX6WKwiZmMN41Ze",
+      "public_key": "02c0853c4dc1a2c942e134d1a1c13b64d6ca58c174b59c638199106897622dc1e2",
+      "private_key_hex": "f0ded5a13c607fe79473da1881c20403cd7bf1356b975e69df692b8ecd255e26"
+    },
+    {
+      "index": 3,
+      "path": "m/44'/1'/0'/0/3",
+      "address": "mxLYvponGWXu52pnndSekX3ee4gFLyeKBq",
+      "public_key": "02e2d65a1fe306f354f3fcd818b61ba13ec6bc049e9234177afe480ac57e7fbc1b",
+      "private_key_hex": "e96108aba81b9c20281a15cf4594eef27f5685c95c76cad0eb5225734d82968f"
+    },
+    {
+      "index": 4,
+      "path": "m/44'/1'/0'/0/4",
+      "address": "my75jBuL1GTwSMwfNc97WiwSvKY9L1UrFM",
+      "public_key": "03e4e923fcf5807e043f06b141934cdc7689d0515f16d30bb1222913a233ef0c3d",
+      "private_key_hex": "61fb3de6fa2e77ff790bcc522e2e2ec93a026621ae2888e7aeee9656fef2a7aa"
+    }
+  ]
+}

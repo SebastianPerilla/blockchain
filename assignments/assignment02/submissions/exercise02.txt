@@ -1,0 +1,4 @@
+Public address: myAKG9m2WUb7hVmNG9tLSXke6WRx2bFmPz
+Funding txid: e04fd37007a9876c1e7f916280cfb7d71059d837e1b7e85177c7cf616f6c0921
+Amount received: 304836 sats
+Confirmed: False

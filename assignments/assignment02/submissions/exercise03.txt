@@ -1,0 +1,5 @@
+Sender public address: myAKG9m2WUb7hVmNG9tLSXke6WRx2bFmPz
+Recipient public address: mo78WUSnBny9Txd9XmdyZQXQmeVRc44GW5
+Amount sent (sats): 12000
+Fee (sats): 1000
+Broadcast txid: a0e0c44116c0ec013f614fad94e2d96d4be8dd7a1b9715f2ff64a8ae4f2b3980

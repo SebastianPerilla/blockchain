@@ -1,0 +1,24 @@
+{
+  "sender": "myAKG9m2WUb7hVmNG9tLSXke6WRx2bFmPz",
+  "recipient": "mo78WUSnBny9Txd9XmdyZQXQmeVRc44GW5",
+  "amount_sats": 12000,
+  "fee_sats": 1000,
+  "raw_tx_hex": "010000000121096c6f61cfc77751e8b7e137d85910d7b7cf8062917f1e6c87a90770d34fe0010000006a47304402200cc49ac04416ab8f2da07e67d9f3f81aa918696bbc106284e3435f0ff49c072402205df3919b02bac2b0b8c8ca0d68b07fd8b017f4af028a66e84e136285b8bed38901210285e6db581d1418ae63ec2f470963fdcebf875930166b677654a41cf92945041dffffffff02e02e0000000000001976a914533f8cad55fe4c00bc4da0e1592043fe34efce1788acfc730400000000001976a914c18b080d2635d9db09f8ebbbe20ea32167b13c7688ac00000000",
+  "predicted_txid": "a0e0c44116c0ec013f614fad94e2d96d4be8dd7a1b9715f2ff64a8ae4f2b3980",
+  "selected_utxos": [
+    {
+      "txid": "e04fd37007a9876c1e7f916280cfb7d71059d837e1b7e85177c7cf616f6c0921",
+      "vout": 1,
+      "status": {
+        "confirmed": true,
+        "block_height": 4863255,
+        "block_hash": "000000008656fbf1e9f6816dea7a017ebf14a70a8606711031b6349c4a9dac89",
+        "block_time": 1772836251
+      },
+      "value": 304836
+    }
+  ],
+  "change_sats": 291836,
+  "broadcasted": true,
+  "broadcast_txid": "a0e0c44116c0ec013f614fad94e2d96d4be8dd7a1b9715f2ff64a8ae4f2b3980"
+}

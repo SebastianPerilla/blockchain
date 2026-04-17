@@ -1,0 +1,15 @@
+{
+  "name": "ticket-manager",
+  "version": "1.0.0",
+  "description": "Exercise 2 — Web3 event ticket DApp",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test":    "hardhat test",
+    "node":    "hardhat node",
+    "deploy":  "hardhat run scripts/deploy.js --network localhost"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "hardhat": "^2.22.0"
+  }
+}
