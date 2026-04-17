@@ -1,0 +1,41 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/sebas/Desktop/ie_dev/y4.2/blockchain/assignments/assignment03/implementation/exercise-2/contracts/TicketManager.sol": {
+      "lastModificationDate": 1776184170141,
+      "contentHash": "ac86fe56d5cf9c4c38146ab0c6b55c3c",
+      "sourceName": "contracts/TicketManager.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "TicketManager"
+      ]
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/sebas/Desktop/ie_dev/y4.2/blockchain/assignments/assignment03/implementation/exercise-1/contracts/VendingMachine.sol": {
+      "lastModificationDate": 1776171012514,
+      "contentHash": "b9bbabd19e2d1f5cb333bbb088de8d10",
+      "sourceName": "contracts/VendingMachine.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "VendingMachine"
+      ]
+    }
+  }
+}
